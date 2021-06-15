@@ -1,0 +1,56 @@
+.index {
+  margin-top: 40px;
+  position: relative;
+}
+.index .left {
+  float: left;
+  width: 860px;
+}
+.index .left .title {
+  margin-bottom: 10px;
+  height: 25px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.index .left .title h3 {
+  font-size: 20px;
+  margin: 0;
+  float: left;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #555;
+}
+.index .left .pagination {
+  border: 1px solid #eaeaea;
+  padding: 30px 0 40px;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 0 0 6px 6px;
+}
+
+.index .right {
+  float: right;
+  width: 300px;
+  position: unset;
+}
+
+@media (max-width: 1239px) {
+  .index .left {
+    width: 684px;
+  }
+  .index .right {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .index .left {
+    width: auto;
+  }
+  .index .right {
+    display: none;
+  }
+}

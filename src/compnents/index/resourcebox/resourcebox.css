@@ -1,0 +1,131 @@
+.resourcebox {
+  border: 1px solid #eaeaea;
+  padding: 20px 20px 20px 215px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: -1px;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+}
+
+.resourcebox img {
+  float: left;
+  margin-left: -195px;
+  width: 180px;
+  height: 123px;
+}
+.resourcebox .resourcebox-header {
+  margin: 0 0 10px;
+}
+.resourcebox .resourcebox-header .logo {
+  float: left;
+  color: #fff;
+  background-color: #67c23a;
+  padding: 3px 6px;
+  font-size: 12px;
+
+  position: relative;
+  top: -2px;
+  margin-right: 6px;
+  margin-top: 2px;
+}
+.resourcebox .resourcebox-header .logo i {
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: -4px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-left: 4px solid #67c23a;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+.resourcebox .resourcebox-header h2 {
+  color: #555;
+  max-height: 56px;
+  display: inline;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}
+.resourcebox .resourcebox-header h2:hover {
+  color: #67c23a;
+  cursor: pointer;
+}
+.resourcebox .meta {
+  color: #999;
+  font-size: 12px;
+}
+.resourcebox .meta .like {
+  float: right;
+}
+.resourcebox .meta .like:hover {
+  color: #67c23a;
+  cursor: pointer;
+}
+.resourcebox .resourcebox-describe {
+  height: 78px;
+  line-height: 1.59;
+  color: #999;
+  font-size: 16px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+}
+.resourcebox .resourcebox-describe p {
+  margin: 0 0 10px;
+}
+
+@media (max-width: 590px) {
+  .resourcebox {
+    border: none;
+    margin: 0 0 1px;
+    padding: 12px 150px 12px 15px;
+    border-radius: 0 !important;
+  }
+  .resourcebox img {
+    float: right;
+    margin-right: -135px;
+    width: 120px;
+    height: 82px;
+  }
+  .resourcebox .resourcebox-header {
+    margin-bottom: 0;
+    height: 66px;
+    overflow: hidden;
+    margin-bottom: 0px;
+  }
+  .resourcebox .resourcebox-header .logo {
+    display: none;
+  }
+  .resourcebox .resourcebox-header h2 {
+    -webkit-line-clamp: 2;
+  }
+
+  .resourcebox .meta {
+    line-height: 1;
+    font-size: 11px;
+    margin-bottom: 0;
+    color: #bbb;
+  }
+  .resourcebox .meta .time {
+    margin-right: 15px;
+    display: none;
+  }
+  .resourcebox .resourcebox-describe {
+    display: none;
+  }
+}

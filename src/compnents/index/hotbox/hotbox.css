@@ -1,0 +1,91 @@
+.hotbox {
+  margin-bottom: 20px;
+}
+.hotbox .bg {
+  height: 650px;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  clear: both;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+  padding: 15px;
+  padding-top: 0;
+}
+.hotbox .title {
+  position: relative;
+  padding-left: 1.2em;
+  font-size: 15px;
+  color: #4e5358;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.hotbox .title::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  background: #67c23a;
+  top: 10%;
+  left: 2px;
+  bottom: 10%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px -1px #67c23a;
+}
+
+.hotbox .tab .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #67c23a;
+}
+.hotbox .tab .ant-tabs-tab-btn:hover {
+  color: #8eda69;
+}
+.hotbox .tab .ant-tabs-tab {
+  margin: 8px;
+  padding: 0;
+}
+.hotbox .tab .ant-tabs-ink-bar {
+  background: #67c23a;
+}
+.hotbox .tab .ant-tabs-nav {
+  margin-bottom: 5px;
+}
+.hotbox .tab .frist {
+  width: 264px;
+  height: 168px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.hotbox .tab .img-text {
+  cursor: pointer;
+  position: relative;
+  width: 264px;
+  height: 168px;
+}
+.hotbox .tab .frist img {
+  width: 264px;
+  height: 168px;
+}
+.hotbox .tab .frist .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgba(29, 41, 49, 0.4) 3em,
+    rgba(255, 255, 255, 0) 8em
+  );
+}
+.hotbox .tab .frist .content-title {
+  color: white;
+  position: absolute;
+  bottom: 18px;
+  left: 14px;
+}
+.hotbox .tab .frist .read {
+  margin-bottom: 5px;
+}
+.hotbox .tab .frist .read span {
+  background-color: #8eda69;
+}

@@ -1,0 +1,28 @@
+.mapbox {
+  margin-bottom: 20px;
+}
+.mapbox .title {
+  position: relative;
+  padding-left: 1.2em;
+  font-size: 15px;
+  color: #4e5358;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 15px;
+}
+.mapbox .title::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  background: #67c23a;
+  top: 10%;
+  left: 2px;
+  bottom: 10%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px -1px #67c23a;
+}
+.map {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+}

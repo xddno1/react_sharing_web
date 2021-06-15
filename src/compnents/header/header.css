@@ -1,0 +1,84 @@
+.header .maskhead {
+  height: 64px;
+}
+
+.header .truehead {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  line-height: 0;
+  box-shadow: 0 0 10px rgba(56, 56, 56, 0.08);
+}
+
+.header .container .logo-container {
+  height: 64px;
+  width: 159px;
+  display: inline-block;
+}
+
+.header .container .logo-container .logo {
+  height: 64px;
+  background: url(../../img/兜兜阁.png) no-repeat;
+  cursor: pointer;
+}
+.header .container .btn-container {
+  line-height: 64px;
+  float: right;
+}
+.header .container .btn-container .registerbtn {
+  background-color: #fff;
+  color: #7a7a7a;
+  font-size: 18px;
+  padding: 6px 17px;
+  border: 0;
+  border-radius: 1000px;
+  margin-right: 8px;
+  cursor: pointer;
+  line-height: normal;
+}
+.header .container .btn-container .registerbtn {
+  background-color: #fff;
+  color: #7a7a7a;
+  font-size: 18px;
+  padding: 6px 17px;
+  border: 0;
+  border-radius: 1000px;
+  margin-right: 8px;
+  cursor: pointer;
+  line-height: normal;
+}
+.header .container .btn-container .loginbtn {
+  color: rgb(53, 183, 42);
+  background-color: #fff;
+  font-size: 18px;
+  padding: 6px 17px;
+  border: solid rgb(53, 183, 42) 2px;
+  border-radius: 1000px;
+  font-weight: bolder;
+  cursor: pointer;
+  line-height: normal;
+}
+.header .container .btn-container .registerbtn:hover {
+  color: rgb(53, 183, 42);
+}
+.header .container .btn-container .loginbtn:hover {
+  background-color: rgb(53, 183, 42);
+  color: #fff;
+}
+
+.header .container .info-container {
+  float: right;
+  line-height: 64px;
+}
+
+.header .container .info-container .people-img {
+  display: inline-block;
+  background: url(../../img/touxiangmoren.jpg) no-repeat;
+  border-radius: 48px;
+  line-height: 64px;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}

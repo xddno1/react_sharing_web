@@ -1,0 +1,29 @@
+.mybacktop .normal-top {
+  height: 50px;
+  width: 50px;
+  background: url(../../img/topnormal.png) no-repeat;
+  text-align: center;
+}
+.mybacktop .normal-top:hover {
+  animation: changebacktopimg 0.3s forwards;
+  -webkit-animation: changebacktopimg 0.3s forwards;
+}
+.mybacktop .hover-top {
+  display: none;
+}
+.mybacktop .hover-top:hover {
+  display: block;
+}
+
+.mybacktop .ant-back-top {
+  right: 1%;
+  bottom: 5%;
+}
+@keyframes changebacktopimg {
+  from {
+    background: url(../../img/topnormal.png) no-repeat;
+  }
+  to {
+    background: url(../../img/topfocus.png) no-repeat;
+  }
+}

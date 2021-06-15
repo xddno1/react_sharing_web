@@ -1,0 +1,104 @@
+.register .userlogintitle {
+  margin-bottom: 30px;
+}
+.register .userlogintitle .title {
+  display: inline-block;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: 0 !important;
+  color: #333 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.register .userlogintitle .no-ac {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px !important;
+  color: #606266;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  float: right !important;
+}
+.register .userlogintitle .no-ac .gotoregister {
+  cursor: pointer;
+  color: #67c23a;
+  display: inline;
+}
+
+/*  重写输入框的外边框颜色  */
+.register .userloginform .ant-input-affix-wrapper:focus,
+.register .userloginform .ant-input-affix-wrapper-focused {
+  border-color: #67c23a !important;
+  box-shadow: 0 0 0 2px rgb(103 194 58/20%);
+  /* 设置icon颜色 */
+  color: #67c23a;
+}
+.register .userloginform .myinput:hover {
+  border: 1px solid #d9d9d9;
+}
+
+.register .userloginform .myinput {
+  border-radius: 4px;
+}
+.register .userloginform .user-ac {
+  margin-bottom: 20px;
+}
+.register .userloginform .user-password {
+  margin-bottom: 20px;
+}
+
+/* 重写单选框的颜色
+.register .userloginform .user-remenber .ant-radio-checked::after {
+  border: 1px solid #67c23a;
+}
+.register .userloginform .user-remenber .ant-radio-inner {
+  border-color: #67c23a;
+}
+.register .userloginform .user-remenber .ant-radio-inner::after {
+  background-color: #67c23a;
+}*/
+/*重写多选框的颜色*/
+.register
+  .userloginform
+  .user-remenber
+  .ant-checkbox-checked
+  .ant-checkbox-inner {
+  background-color: #67c23a;
+}
+.register .userloginform .user-remenber .ant-checkbox-inner {
+  border-color: #67c23a;
+}
+.register .userloginform .user-remenber .ant-checkbox-checked::after {
+  border: 1px solid #67c23a;
+}
+
+.register .userloginform .user-remenber {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.register .userloginform .userloginbtn {
+  background-color: #67c23a;
+  border-color: #67c23a;
+  margin-bottom: 10px;
+}
+.register .userloginform .userloginbtn:hover {
+  background-color: #7bc954;
+  border-color: #7bc954;
+}
+
+.register .userloginform .gotoadminlogin {
+  text-align: center;
+  vertical-align: middle;
+}
+.register .userloginform .gotoadminlogin span {
+  font-size: 10px;
+  color: #aaa;
+  cursor: pointer;
+}
+.register .userloginform .gotoadminlogin span:hover {
+  text-decoration: underline;
+}

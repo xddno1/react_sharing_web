@@ -1,0 +1,96 @@
+.footer {
+  color: rgba(255, 255, 255, 0.7);
+  background: #2d3236;
+  padding: 50px 0;
+}
+
+.footer .container .footerlist {
+  margin-right: 32px;
+}
+.footer .container .footerlist p {
+  margin: 0 0 10px;
+}
+.footer .container .footerlist p span {
+  cursor: pointer;
+}
+.footer .container .footerlist p span:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.footer .container .iconlist {
+  float: right;
+}
+.footer .container .iconlist i {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 0;
+  margin-right: 7px;
+}
+.footer .container .iconlist .qq:hover {
+  cursor: pointer;
+  animation: changecolorqq 0.3s forwards;
+  -webkit-animation: changecolorqq 0.3s forwards;
+}
+.footer .container .iconlist .wx:hover {
+  cursor: pointer;
+  animation: changecolorwx 0.3s forwards;
+  -webkit-animation: changecolorwx 0.3s forwards;
+}
+.footer .container .iconlist .qq::before {
+  content: "";
+  background: url(../../img/QQ.png) no-repeat;
+  width: 27px;
+  height: 27px;
+  margin-left: 6px;
+  margin-top: 6px;
+  background-size: 100%;
+  display: block;
+}
+.footer .container .iconlist .wx::before {
+  content: "";
+  background: url(../../img/微信.png) no-repeat;
+  width: 27px;
+  height: 27px;
+  margin-left: 6px;
+  margin-top: 6px;
+  background-size: 100%;
+  display: block;
+}
+
+@keyframes changecolorqq {
+  from {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  to {
+    background: rgb(230, 85, 76);
+  }
+}
+@keyframes changecolorwx {
+  from {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  to {
+    background: #67c23a;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer {
+    text-align: center;
+  }
+  .footer .container .iconlist {
+    display: none;
+  }
+  .footer .container .footerlist {
+    margin-right: 0;
+  }
+}
