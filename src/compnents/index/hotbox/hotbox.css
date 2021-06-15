@@ -87,5 +87,7 @@
   margin-bottom: 5px;
 }
 .hotbox .tab .frist .read span {
-  background-color: #8eda69;
+  padding: 1px 5px;
+  background-color: #60b834;
+  border-radius: 6px;
 }
