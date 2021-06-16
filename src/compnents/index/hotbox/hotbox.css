@@ -1,5 +1,8 @@
 .hotbox {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+}
+.hotbox .relative {
+  position: relative;
 }
 .hotbox .bg {
   height: 650px;
@@ -17,6 +20,7 @@
   font-size: 15px;
   color: #4e5358;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 10px;
 }
 .hotbox .title::before {
   position: absolute;
@@ -51,6 +55,7 @@
   height: 168px;
   border-radius: 6px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .hotbox .tab .img-text {
@@ -62,7 +67,16 @@
 .hotbox .tab .frist img {
   width: 264px;
   height: 168px;
+  transition: all 0.2s;
 }
+.hotbox .tab .frist:hover img {
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
 .hotbox .tab .frist .mask {
   position: absolute;
   left: 0;
@@ -90,4 +104,95 @@
   padding: 1px 5px;
   background-color: #60b834;
   border-radius: 6px;
+}
+
+.hotbox .tab .nofrist {
+  width: 264px;
+  height: 75px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.hotbox .tab .nofrist .imgonly {
+  width: 93px;
+  height: 75px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.hotbox .tab .nofrist img {
+  position: absolute;
+  width: 93px;
+  height: 75px;
+  transition: all 0.2s;
+}
+.hotbox .tab .nofrist:hover img {
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+  transform: scale(1.04);
+}
+.hotbox .tab .nofrist .box-right {
+  position: relative;
+  width: 166px;
+  height: 75px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hotbox .tab .nofrist .box-right .hotbox-title {
+  height: 2.9em;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.hotbox .tab .nofrist .box-right .hotbox-title span {
+  cursor: pointer;
+}
+.hotbox .tab .nofrist:hover .box-right .hotbox-title {
+  color: #67c23a;
+}
+.hotbox .tab .nofrist .box-right .meta {
+  margin-top: 20px;
+  color: #b1b1b1;
+  font-size: 12px;
+  float: right;
+}
+.hotbox .tab .nofrist .box-right .meta span {
+  margin-left: 1px;
+}
+
+.hotbox .tab .notop1 {
+  position: absolute;
+  z-index: 5;
+  top: 8px;
+  padding: 1px 7px 1px 5px;
+  border-radius: 0 8px 8px 0;
+  background-color: #818b95;
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.hotbox .tab .top1 {
+  position: absolute;
+  z-index: 5;
+  top: 8px;
+  padding: 1px 8px 1px 5px;
+  border-radius: 0 10px 10px 0;
+  background-color: #fe3459;
+  color: #fff;
+  font-size: 1.2em;
+}
+.hotbox .tab .top2 {
+  background: linear-gradient(135deg, #fd7a64 10%, #fb2d2d 100%);
+}
+.hotbox .tab .top3 {
+  background: linear-gradient(135deg, #f59f54 10%, #ff6922 100%);
 }

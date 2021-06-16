@@ -10,7 +10,7 @@ import "./myloginmodal.css";
 
 class Myloginmodal extends React.Component {
   state = {
-    loading: false,
+    pathname: "",
   };
 
   showModal = () => {
@@ -41,7 +41,7 @@ class Myloginmodal extends React.Component {
   }
 
   render() {
-    const { visible } = this.props;
+    const { visible, nowpath } = this.props;
     return (
       <Modal
         visible={visible}
@@ -53,9 +53,9 @@ class Myloginmodal extends React.Component {
           <div className="logo"></div>
         </div>
         <Switch>
-          <Route path="/index/userlogin" component={Userlogin} />
-          <Route path="/index/register" component={Register} />
-          <Route path="/index/adminlogin" component={Adminlogin} />
+          <Route path={`${nowpath}/userlogin`} component={Userlogin} />
+          <Route path={`${nowpath}/register`} component={Register} />
+          <Route path={`${nowpath}/adminlogin`} component={Adminlogin} />
         </Switch>
       </Modal>
     );

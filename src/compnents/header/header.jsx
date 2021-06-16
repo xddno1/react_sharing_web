@@ -26,6 +26,7 @@ function Header(props) {
 
   let history = useHistory();
   const [visible, setVisible] = React.useState(false);
+  const [nowpath, setNowpath] = React.useState("");
 
   function changevisible() {
     setVisible((e) => !e);
@@ -48,6 +49,7 @@ function Header(props) {
   function registerHandle() {
     setVisible((e) => !e);
     const nowpath = history.location.pathname;
+    setNowpath(() => nowpath);
     const topath = `${nowpath}/register`;
     history.push(topath);
   }
@@ -55,6 +57,7 @@ function Header(props) {
   function loginHandle() {
     setVisible((e) => !e);
     const nowpath = history.location.pathname;
+    setNowpath(() => nowpath);
     const topath = `${nowpath}/userlogin`;
     history.push(topath);
   }
@@ -87,7 +90,11 @@ function Header(props) {
         </div>
       </div>
       <div className="maskhead"></div>
-      <Myloginmodal visible={visible} changevisible={changevisible} />
+      <Myloginmodal
+        visible={visible}
+        nowpath={nowpath}
+        changevisible={changevisible}
+      />
     </div>
   );
 }
