@@ -8,6 +8,7 @@ import "./app.css";
 import Footer from "./footer/footer";
 import Header from "./header/header";
 import Index from "./index/index";
+import Page from "./page/page";
 import Admin from "./admin/admin";
 import Mybacktop from "./mybacktop/mybacktop";
 
@@ -18,6 +19,7 @@ export default class App extends React.Component {
         <Header />
         <Switch>
           <Route path="/index" component={Index} />
+          <Route path="/page/:pageid" component={Page} />
           <Route path="/admin" component={Admin} />
           <Redirect to="/index" />
         </Switch>

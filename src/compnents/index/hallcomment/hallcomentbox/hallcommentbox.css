@@ -1,0 +1,27 @@
+.hallcommentbox {
+  border-bottom: 1px solid #eaeaea;
+  padding: 5px 0;
+}
+.hallcommentbox .img {
+  display: inline-block;
+  background: url(../../../../img/touxiangmoren.jpg) no-repeat;
+  border-radius: 48px;
+  line-height: 64px;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+}
+.hallcommentbox .hallcommentboxheader {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.hallcommentbox .hallcommentboxheader .time {
+  color: #333;
+  font-size: 10px;
+}
+.hallcommentbox .contain {
+  color: #222226;
+  font-size: 14px;
+  padding: 0 8px;
+  margin-bottom: 8px;
+}

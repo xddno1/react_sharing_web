@@ -17,13 +17,14 @@ export default class Index extends React.Component {
   };
   updatelist = () => {
     const { currentpage, pageSize } = this.state;
-    const data = { currentpage: currentpage, pageSize: pageSize };
-    console.log(data);
     const path = {
-      pathname: "/index/page",
-      query: data,
+      pathname: `/index`,
+      state: {
+        currentpage,
+        pageSize,
+      },
     };
-    this.props.history.push(path);
+    this.props.history.replace(path);
   };
 
   pageonChange = (currentpage) => {
@@ -34,9 +35,11 @@ export default class Index extends React.Component {
   };
   componentDidMount() {
     // 使用didmount生命周期钩子订阅消息
-    this.updatelist();
     PubSub.subscribe("resourcetotal", (name, resourcetotal) => {
       this.setState({ resourcetotal });
+    });
+    PubSub.subscribe("currentpage", (name, currentpage) => {
+      this.setState({ currentpage });
     });
   }
   render() {
@@ -46,10 +49,9 @@ export default class Index extends React.Component {
         <div className="container clearfix">
           <div className="left">
             <div className="title">
-              <h3>最新发布</h3>
+              <h3 id="resource-anchor">最新发布</h3>
             </div>
-            <Route path="/index/page" component={Resourcelist} />
-
+            <Route path="/index" component={Resourcelist} />
             <div className="pagination">
               <Pagination
                 current={currentpage}

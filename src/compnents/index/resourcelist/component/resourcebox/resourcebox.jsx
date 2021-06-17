@@ -5,10 +5,16 @@ import {
   DownloadOutlined,
   LikeOutlined,
 } from "@ant-design/icons";
+import { withRouter } from "react-router-dom";
 
 import "./resourcebox.css";
 
-export default class Resourcebox extends React.Component {
+class Resourcebox extends React.Component {
+  handleGoToPage = () => {
+    const pageid = this.props.item[0].id;
+    console.log(this.props.item[0].id);
+    this.props.history.push(`/page/${pageid}`);
+  };
   render() {
     const { item } = this.props;
     return (
@@ -25,7 +31,7 @@ export default class Resourcebox extends React.Component {
           <span className="logo">
             站长推荐<i></i>
           </span>
-          <h2>{item[0].title}</h2>
+          <h2 onClick={this.handleGoToPage}>{item[0].title}</h2>
         </div>
         <div className="meta">
           <span className="time">
@@ -53,3 +59,5 @@ export default class Resourcebox extends React.Component {
     );
   }
 }
+
+export default withRouter(Resourcebox);

@@ -21,3 +21,44 @@
   border-radius: 5px;
   box-shadow: 1px 1px 3px -1px #67c23a;
 }
+
+.hallcomment .hallcomment-list {
+  overflow-y: scroll;
+  background-color: #fff;
+  width: 100%;
+  height: 545px;
+  border: 1px solid #eaeaea;
+  border-bottom: 0px;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px 6px 0 0;
+  padding: 15px;
+}
+
+.hallcomment .addhallcomment {
+  border-top: 1px solid #eaeaea;
+  background-color: #fff;
+  width: 100%;
+  padding: 2px 15px;
+}
+.hallcomment .addhallcomment .hallcommentinput {
+  width: 200px;
+  margin-right: 5px;
+}
+.hallcomment .ant-input:hover {
+  border-color: #67c23a;
+}
+.hallcomment .ant-input:focus,
+.hallcomment .ant-input-focused {
+  border-color: #67c23a;
+  border-right-width: 1px !important;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgb(53, 183, 42 / 20%);
+}
+.hallcomment .addhallcomment .ant-btn:hover,
+.hallcomment .addhallcomment .ant-btn:focus {
+  border-color: #67c23a;
+}
+.hallcomment .addhallcomment .hallcommentbtn {
+  color: #fff;
+  background-color: #67c23a;
+}

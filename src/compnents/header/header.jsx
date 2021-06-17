@@ -10,9 +10,12 @@ import { actionDeleteUserToken } from "../../redux/actions/usertoken";
 import "./header.css";
 
 function Header(props) {
+  let history = useHistory();
+
   const menu = (
     <Menu onClick={unlogin}>
-      {props.admintoken && <Menu.Item key="2">到管理页</Menu.Item>}
+      {props.admintoken && <Menu.Item key="2">主页/管理页</Menu.Item>}
+
       <Menu.Item key="1">退出登录</Menu.Item>
     </Menu>
   );
@@ -24,7 +27,6 @@ function Header(props) {
     });
   }, []);
 
-  let history = useHistory();
   const [visible, setVisible] = React.useState(false);
   const [nowpath, setNowpath] = React.useState("");
 
@@ -40,7 +42,13 @@ function Header(props) {
         props.deleteusertoken();
         break;
       case 2:
+        if (history.location.pathname === "/admin") {
+          history.push("/index");
+        } else {
+          history.push("/admin");
+        }
         break;
+
       default:
         break;
     }
