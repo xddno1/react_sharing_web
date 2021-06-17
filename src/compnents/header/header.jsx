@@ -14,7 +14,13 @@ function Header(props) {
 
   const menu = (
     <Menu onClick={unlogin}>
-      {props.admintoken && <Menu.Item key="2">主页/管理页</Menu.Item>}
+      {props.admintoken && history.location.pathname !== "/admin" && (
+        <Menu.Item key="3">到管理页</Menu.Item>
+      )}
+
+      {props.admintoken && history.location.pathname === "/admin" && (
+        <Menu.Item key="2">到主页</Menu.Item>
+      )}
 
       <Menu.Item key="1">退出登录</Menu.Item>
     </Menu>
@@ -29,7 +35,7 @@ function Header(props) {
 
   const [visible, setVisible] = React.useState(false);
   const [nowpath, setNowpath] = React.useState("");
-
+  const [tt, setTt] = React.useState(true);
   function changevisible() {
     setVisible((e) => !e);
   }
@@ -42,13 +48,13 @@ function Header(props) {
         props.deleteusertoken();
         break;
       case 2:
-        if (history.location.pathname === "/admin") {
-          history.push("/index");
-        } else {
-          history.push("/admin");
-        }
+        history.push("/index");
+        setTt((e) => !e);
         break;
-
+      case 3:
+        history.push("/admin");
+        setTt((e) => !e);
+        break;
       default:
         break;
     }
@@ -77,6 +83,7 @@ function Header(props) {
           <div className="clearfix">
             <div className="logo-container">
               <div className="logo"></div>
+              {tt && <span></span>}
             </div>
             {props.admintoken || props.usertoken ? (
               <div className="info-container">
