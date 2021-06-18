@@ -4,7 +4,7 @@ import PubSub from "pubsub-js";
 import { connect } from "react-redux";
 import { Menu, Dropdown } from "antd";
 
-import Myloginmodal from "./component/myloginmodal/myloginmodal";
+import Myloginmodal from "./components/myloginmodal/myloginmodal";
 import { actionDeleteAdminToken } from "../../../redux/actions/admintoken";
 import { actionDeleteUserToken } from "../../../redux/actions/usertoken";
 import "./header.css";

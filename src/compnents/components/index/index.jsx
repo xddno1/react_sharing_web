@@ -3,10 +3,10 @@ import { Pagination } from "antd";
 import PubSub from "pubsub-js";
 import { Route } from "react-router-dom";
 
-import Resourcelist from "./resourcelist/resourcelist";
-import Noticebox from "./noticebox/noticebox";
-import Hotbox from "./hotbox/hotbox";
-import Hallcomment from "./hallcomment/hallcomment";
+import Resourcelist from "./components/resourcelist/resourcelist";
+import Noticebox from "./components/noticebox/noticebox";
+import Hotbox from "./components/hotbox/hotbox";
+import Hallcomment from "./components/hallcomment/hallcomment";
 import "./index.css";
 
 export default class Index extends React.Component {

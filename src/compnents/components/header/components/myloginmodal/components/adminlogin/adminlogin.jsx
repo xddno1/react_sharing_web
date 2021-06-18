@@ -5,7 +5,7 @@ import axios from "axios";
 import PubSub from "pubsub-js";
 import { connect } from "react-redux";
 
-import { actionInsertAdminToken } from "../../../../../../redux/actions/admintoken";
+import { actionInsertAdminToken } from "../../../../../../../redux/actions/admintoken";
 import "./adminlogin.css";
 
 class Adminlogin extends React.Component {

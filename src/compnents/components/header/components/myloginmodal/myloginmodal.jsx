@@ -3,9 +3,9 @@ import { Modal } from "antd";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
-import Userlogin from "./component/userlogin/userlogin";
-import Register from "./component/register/register";
-import Adminlogin from "./component/adminlogin/adminlogin";
+import Userlogin from "./components/userlogin/userlogin";
+import Register from "./components/register/register";
+import Adminlogin from "./components/adminlogin/adminlogin";
 import "./myloginmodal.css";
 
 class Myloginmodal extends React.Component {

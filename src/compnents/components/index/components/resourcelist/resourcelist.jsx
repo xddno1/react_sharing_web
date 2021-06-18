@@ -3,7 +3,7 @@ import PubSub from "pubsub-js";
 import axios from "axios";
 
 import "./resourcelist.css";
-import Resourcebox from "./component/resourcebox/resourcebox";
+import Resourcebox from "./components/resourcebox/resourcebox";
 
 export default class Resourcelist extends React.Component {
   state = {

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Hotbox from "../index/hotbox/hotbox";
-import Mapbox from "../index/mapbox/mapbox";
+import Hotbox from "../index/components/hotbox/hotbox";
+import Mapbox from "../index/components/mapbox/mapbox";
 import "./page.css";
 
 export default class Page extends React.Component {

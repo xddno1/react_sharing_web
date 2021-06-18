@@ -5,13 +5,14 @@ import axios from "axios";
 import PubSub from "pubsub-js";
 import { connect } from "react-redux";
 
-import { actionInsertUserToken } from "../../../../../../redux/actions/usertoken";
-import "./userlogin.css";
+import { actionInsertUserToken } from "../../../../../../../redux/actions/usertoken";
+import "./register.css";
 
-class Userlogin extends React.Component {
+class Register extends React.Component {
   state = {
     username: "",
     userpsw: "",
+    autologin: false,
   };
   usernameChange = (e) => {
     const username = e.target.value.replace(/\s*/g, "");
@@ -21,26 +22,30 @@ class Userlogin extends React.Component {
     const userpsw = e.target.value;
     this.setState({ userpsw });
   };
-  gotoadminlogin = () => {
-    const { history } = this.props;
-    let nowpath = history.location.pathname;
-    let a = nowpath.split("/");
-    a.pop();
-    nowpath = a.join("/");
-    const topath = `${nowpath}/adminlogin`;
-    history.replace(topath);
+  autoLoginChange = (e) => {
+    const autologin = e.target.checked;
+    this.setState({ autologin });
   };
-  gotoregister = () => {
-    const { history } = this.props;
-    let nowpath = history.location.pathname;
-    let a = nowpath.split("/");
-    a.pop();
-    nowpath = a.join("/");
-    const topath = `${nowpath}/register`;
-    history.replace(topath);
+  handleRegister = () => {
+    const { username, userpsw, autologin } = this.state;
+    axios
+      .post(
+        `http://121.4.187.232:8081/user/register?password=${userpsw}&username=${username}`
+      )
+      .then((a) => {
+        console.log(a);
+        if (a.data === "isOk") {
+          PubSub.publish("visiblechange");
+          this.props.history.goBack();
+          message.success("注册成功");
+          if (autologin === true) {
+            this.loginac();
+          }
+        }
+      });
   };
 
-  handleLogin = () => {
+  loginac = () => {
     const { username, userpsw } = this.state;
     axios
       .post(
@@ -49,8 +54,6 @@ class Userlogin extends React.Component {
       .then((e) => {
         const usertoken = e.data.token;
         this.props.insertUserToken(usertoken);
-        PubSub.publish("visiblechange");
-        this.props.history.goBack();
         message.success("登录成功");
       })
       .catch((e) => {
@@ -58,16 +61,26 @@ class Userlogin extends React.Component {
       });
   };
 
+  gotologin = () => {
+    const { history } = this.props;
+    let nowpath = history.location.pathname;
+    let a = nowpath.split("/");
+    a.pop();
+    nowpath = a.join("/");
+    const topath = `${nowpath}/userlogin`;
+    history.replace(topath);
+  };
+
   render() {
     const { username, userpsw } = this.state;
     return (
-      <div className="userlogin">
+      <div className="register">
         <div className="userlogintitle clearfix">
-          <span className="title">用户登录</span>
+          <span className="title">用户注册</span>
           <span className="no-ac">
-            还没有账号？
+            已经有帐号？
             <div className="gotoregister">
-              <span onClick={this.gotoregister}> 立即注册</span>
+              <span onClick={this.gotologin}> 马上登录</span>
             </div>
           </span>
         </div>
@@ -93,20 +106,19 @@ class Userlogin extends React.Component {
             ></Input.Password>
           </div>
           <div className="user-remenber">
-            <Checkbox defaultChecked="true">记住我的登录状态</Checkbox>
+            <Checkbox defaultChecked="true" onChange={this.autoLoginChange}>
+              注册后自动登录
+            </Checkbox>
           </div>
           <Button
             className="userloginbtn"
             size="large"
             type="primary"
             block
-            onClick={this.handleLogin}
+            onClick={this.handleRegister}
           >
-            登录
+            注册
           </Button>
-          <div className="gotoadminlogin">
-            <span onClick={this.gotoadminlogin}> 管理员登录</span>
-          </div>
         </div>
       </div>
     );
@@ -115,4 +127,4 @@ class Userlogin extends React.Component {
 
 export default connect((state) => ({ usertoken: state.usertoken }), {
   insertUserToken: actionInsertUserToken,
-})(Userlogin);
+})(Register);
