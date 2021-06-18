@@ -1,7 +1,7 @@
 .mybacktop .normal-top {
   height: 50px;
   width: 50px;
-  background: url(../../img/topnormal.png) no-repeat;
+  background: url(../../../img/topnormal.png) no-repeat;
   text-align: center;
 }
 .mybacktop .normal-top:hover {
@@ -21,9 +21,9 @@
 }
 @keyframes changebacktopimg {
   from {
-    background: url(../../img/topnormal.png) no-repeat;
+    background: url(../../../img/topnormal.png) no-repeat;
   }
   to {
-    background: url(../../img/topfocus.png) no-repeat;
+    background: url(../../../img/topfocus.png) no-repeat;
   }
 }

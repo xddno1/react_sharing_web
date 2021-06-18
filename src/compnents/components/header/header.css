@@ -19,7 +19,7 @@
 
 .header .container .logo-container .logo {
   height: 64px;
-  background: url(../../img/兜兜阁.png) no-repeat;
+  background: url(../../../img/兜兜阁.png) no-repeat;
   cursor: pointer;
 }
 .header .container .btn-container {
@@ -74,7 +74,7 @@
 
 .header .container .info-container .people-img {
   display: inline-block;
-  background: url(../../img/touxiangmoren.jpg) no-repeat;
+  background: url(../../../img/touxiangmoren.jpg) no-repeat;
   border-radius: 48px;
   line-height: 64px;
   vertical-align: middle;

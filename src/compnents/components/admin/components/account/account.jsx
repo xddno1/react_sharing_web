@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import "./account.css";
-import Accounttable from "./component/accounttable/accounttable";
+import Accounttable from "./components/accounttable/accounttable";
 
 export default class Account extends React.Component {
   render() {

@@ -6,11 +6,11 @@ import "antd/dist/antd.css";
 
 import "./app.css";
 import Footer from "./components/footer/footer";
-import Header from "./header/header";
-import Index from "./index/index";
-import Page from "./page/page";
-import Admin from "./admin/admin";
-import Mybacktop from "./mybacktop/mybacktop";
+import Header from "./components/header/header";
+import Index from "./components/index/index";
+import Page from "./components/page/page";
+import Admin from "./components/admin/admin";
+import Mybacktop from "./components/mybacktop/mybacktop";
 
 export default class App extends React.Component {
   render() {

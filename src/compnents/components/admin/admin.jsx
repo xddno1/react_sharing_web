@@ -9,12 +9,12 @@ import {
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import "./admin.css";
-import Adminindex from "./component/adminindex/adminindex";
-import Account from "./account/account";
-import Hallcommentcontral from "./component/hallcommentcontral/hallcommentcontral";
-import Newpage from "./component/newpage/newpage";
-import Notice from "./component/notice/notice";
-import Pagelist from "./component/pagelist/pagelist";
+import Adminindex from "./components/adminindex/adminindex";
+import Account from "./components/account/account";
+import Hallcommentcontral from "./components/hallcommentcontral/hallcommentcontral";
+import Newpage from "./components/newpage/newpage";
+import Notice from "./components/notice/notice";
+import Pagelist from "./components/pagelist/pagelist";
 
 const { SubMenu } = Menu;
 export default class Admin extends React.Component {

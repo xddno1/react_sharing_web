@@ -47,7 +47,7 @@
 }
 .footer .container .iconlist .qq::before {
   content: "";
-  background: url(../../img/QQ.png) no-repeat;
+  background: url(../../../img/QQ.png) no-repeat;
   width: 27px;
   height: 27px;
   margin-left: 6px;
@@ -57,7 +57,7 @@
 }
 .footer .container .iconlist .wx::before {
   content: "";
-  background: url(../../img/微信.png) no-repeat;
+  background: url(../../../img/微信.png) no-repeat;
   width: 27px;
   height: 27px;
   margin-left: 6px;
