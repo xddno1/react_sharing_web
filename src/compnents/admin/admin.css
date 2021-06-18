@@ -1,0 +1,58 @@
+.admin {
+  display: -webkit-box;
+}
+
+.admin .menu {
+  width: 256px;
+}
+
+/* 修改antd的menu样式 */
+.ant-menu-submenu:hover
+  > .ant-menu-submenu-title
+  > .ant-menu-submenu-expand-icon,
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+  color: #67c23a;
+}
+.ant-menu-item:active,
+.ant-menu-submenu-title:active {
+  background: #cbeeba;
+}
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+  border-right: 3px solid #67c23a;
+}
+.ant-menu-submenu-selected {
+  color: #67c23a !important;
+}
+.ant-menu-item-selected {
+  color: #67c23a;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #cbeeba;
+}
+.ant-menu-item:hover,
+.ant-menu-item-active,
+.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-submenu-active,
+.ant-menu-submenu-title:hover {
+  color: #67c23a;
+}
+.ant-menu-item:hover,
+.ant-menu-item-active,
+.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-submenu-active,
+.ant-menu-submenu-title:hover {
+  color: #67c23a;
+}
+@media (max-width: 1240px) {
+  .admin .menu {
+    width: 190px;
+  }
+}
+@media (max-width: 991px) {
+  .admin .menu {
+    width: 60px;
+  }
+}

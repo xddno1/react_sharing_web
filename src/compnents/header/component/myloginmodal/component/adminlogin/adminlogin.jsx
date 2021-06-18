@@ -34,6 +34,7 @@ class Adminlogin extends React.Component {
         console.log(this.props);
         this.props.history.replace("/admin");
         message.success("登录成功");
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
       })
       .catch((e) => {
         message.error("登录失败");

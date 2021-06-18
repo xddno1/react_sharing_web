@@ -23,12 +23,12 @@
 }
 .index .left .pagination {
   border: 1px solid #eaeaea;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 0 0 6px 6px;
   padding: 30px 0 40px;
   background-color: #fff;
   text-align: center;
   margin-bottom: 50px;
-  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
-  border-radius: 0 0 6px 6px;
 }
 
 .index .right {
@@ -48,7 +48,7 @@
 
 @media screen and (max-width: 991px) {
   .index .left {
-    width: auto;
+    width: 100%;
   }
   .index .right {
     display: none;

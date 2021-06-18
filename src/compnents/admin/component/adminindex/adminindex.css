@@ -1,0 +1,49 @@
+.adminindex {
+  width: calc(100% - 256px);
+}
+
+.adminindex .bg {
+  margin: 30px 100px;
+  padding: 5% 15% 15%;
+
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+}
+.adminindex h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.adminindex h3 {
+  margin-bottom: 10px;
+}
+.adminindex span {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1240px) {
+  .adminindex .bg {
+    margin: 25px 50px;
+  }
+  .adminindex {
+    width: calc(100% - 190px);
+  }
+}
+@media (max-width: 991px) {
+  .adminindex {
+    width: calc(100% - 60px);
+  }
+  .adminindex .bg {
+    margin: 15px;
+  }
+
+  .adminindex h1 {
+    padding-top: 25px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 700px) {
+}

@@ -41,19 +41,24 @@ function Header(props) {
   }
 
   function unlogin(e) {
-    console.log(e.key);
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     switch (e.key * 1) {
       case 1:
         props.deleteadmintoken();
         props.deleteusertoken();
+        history.replace("/index");
+
         break;
       case 2:
         history.push("/index");
+
         setTt((e) => !e);
+
         break;
       case 3:
         history.push("/admin");
         setTt((e) => !e);
+
         break;
       default:
         break;

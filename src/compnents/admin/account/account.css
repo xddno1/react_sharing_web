@@ -1,0 +1,52 @@
+.account {
+}
+
+.account .bg {
+  margin: 40px 100px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+  height: 560px;
+}
+
+.account .ct {
+  margin: 0 180px;
+  padding: 30px 0;
+}
+.account .ct h2 {
+  text-align: center;
+  margin: 20px 0;
+  margin-bottom: 30px;
+}
+.account .ant-table-wrapper {
+  clear: none;
+}
+@media (max-width: 1400px) {
+  .account .ct {
+    margin: 0 130px;
+  }
+}
+@media (max-width: 1240px) {
+  .account {
+    margin-left: 190px;
+  }
+  .account .bg {
+    margin: 0 50px;
+  }
+  .account .ct {
+    margin: 0 90px;
+  }
+}
+@media (max-width: 991px) {
+  .account {
+    margin-left: 60px;
+  }
+  .account .bg {
+    margin: 15px;
+  }
+  .account .ct {
+    margin: 0 5px;
+  }
+}
+@media (max-width: 700px) {
+}
