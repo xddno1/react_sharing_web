@@ -10,7 +10,7 @@ export default class Account extends React.Component {
       <div className="account">
         <div className="bg">
           <div className="ct">
-            <h2>账号查询</h2>
+            <h1>账号查询</h1>
             <Route path="/admin/account" component={Accounttable} />
           </div>
         </div>

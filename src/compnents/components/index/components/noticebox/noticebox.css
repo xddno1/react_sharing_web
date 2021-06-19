@@ -32,6 +32,7 @@
 .noticebox .content span {
   min-height: 132px;
   max-height: 178px;
+  width: 100%;
   display: inline-block;
   overflow-y: scroll;
   word-break: break-all;

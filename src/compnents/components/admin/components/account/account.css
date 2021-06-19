@@ -1,49 +1,46 @@
+.account {
+  width: calc(100% - 256px);
+}
+
 .account .bg {
-  margin: 40px 100px;
+  margin: 30px 100px;
+  padding: 5% 15%;
+
   background-color: #fff;
   box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
   border-radius: 6px;
-  height: 560px;
+}
+.account h1 {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.account .ct {
-  margin: 0 180px;
-  padding: 30px 0;
+.account h3 {
+  margin-bottom: 10px;
 }
-.account .ct h2 {
-  text-align: center;
-  margin: 20px 0;
+.account span {
+  display: inline-block;
+  margin-left: 10px;
   margin-bottom: 30px;
 }
-.account .ant-table-wrapper {
-  clear: none;
-}
-@media (max-width: 1400px) {
-  .account .ct {
-    margin: 0 130px;
-  }
-}
 @media (max-width: 1240px) {
-  .account {
-    margin-left: 190px;
-  }
   .account .bg {
-    margin: 0 50px;
+    margin: 25px 50px;
   }
-  .account .ct {
-    margin: 0 90px;
+  .account {
+    width: calc(100% - 190px);
   }
 }
 @media (max-width: 991px) {
   .account {
-    margin-left: 60px;
+    width: calc(100% - 60px);
   }
   .account .bg {
     margin: 15px;
   }
-  .account .ct {
-    margin: 0 5px;
+
+  .account h1 {
+    padding-top: 25px;
+    margin-top: 40px;
   }
-}
-@media (max-width: 700px) {
 }

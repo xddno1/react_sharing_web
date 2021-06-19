@@ -12,29 +12,9 @@ import "./header.css";
 function Header(props) {
   let history = useHistory();
 
-  const menu = (
-    <Menu onClick={unlogin}>
-      {props.admintoken && history.location.pathname !== "/admin" && (
-        <Menu.Item key="3">到管理页</Menu.Item>
-      )}
-
-      {props.admintoken && history.location.pathname === "/admin" && (
-        <Menu.Item key="2">到主页</Menu.Item>
-      )}
-
-      <Menu.Item key="1">退出登录</Menu.Item>
-    </Menu>
-  );
-
-  // 使用didmount生命周期钩子订阅消息
-  React.useEffect(() => {
-    PubSub.subscribe("visiblechange", () => {
-      changevisible();
-    });
-  }, []);
-
   const [visible, setVisible] = React.useState(false);
   const [nowpath, setNowpath] = React.useState("");
+  // 用于虚晃一枪
   const [tt, setTt] = React.useState(true);
   function changevisible() {
     setVisible((e) => !e);
@@ -51,14 +31,12 @@ function Header(props) {
         break;
       case 2:
         history.push("/index");
-
         setTt((e) => !e);
 
         break;
       case 3:
         history.push("/admin");
         setTt((e) => !e);
-
         break;
       default:
         break;
@@ -80,7 +58,27 @@ function Header(props) {
     const topath = `${nowpath}/userlogin`;
     history.push(topath);
   }
+  // 使用didmount生命周期钩子订阅消息
+  React.useEffect(() => {
+    PubSub.subscribe("visiblechange", () => {
+      changevisible();
+    });
+  }, []);
+  const menu = (
+    <Menu onClick={unlogin}>
+      {props.admintoken &&
+        history.location.pathname.split("/")[1] !== "admin" && (
+          <Menu.Item key="3">到管理页</Menu.Item>
+        )}
 
+      {props.admintoken &&
+        history.location.pathname.split("/")[1] === "admin" && (
+          <Menu.Item key="2">到主页</Menu.Item>
+        )}
+
+      <Menu.Item key="1">退出登录</Menu.Item>
+    </Menu>
+  );
   return (
     <div className="header">
       <div className="truehead">

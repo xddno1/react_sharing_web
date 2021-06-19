@@ -1,3 +1,38 @@
 .hallcommentcontral {
-  color: red;
+  width: calc(100% - 256px);
+}
+
+.hallcommentcontral .bg {
+  margin: 30px 100px;
+  padding: 5% 15%;
+
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+}
+.hallcommentcontral h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1240px) {
+  .hallcommentcontral .bg {
+    margin: 25px 50px;
+  }
+  .hallcommentcontral {
+    width: calc(100% - 190px);
+  }
+}
+@media (max-width: 991px) {
+  .hallcommentcontral {
+    width: calc(100% - 60px);
+  }
+  .hallcommentcontral .bg {
+    margin: 15px;
+  }
+
+  .hallcommentcontral h1 {
+    padding-top: 25px;
+    margin-top: 40px;
+  }
 }
