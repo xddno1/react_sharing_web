@@ -36,7 +36,8 @@ class Resourcebox extends React.Component {
         <div className="meta">
           <span className="time">
             <ClockCircleOutlined />
-            &nbsp;2021-6-15 &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;{item[0].time && item[0].time.split(" ")[0]}{" "}
+            &nbsp;&nbsp;&nbsp;&nbsp;
           </span>
           <span className="read">
             <EyeOutlined />

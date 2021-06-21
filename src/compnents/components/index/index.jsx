@@ -42,6 +42,9 @@ export default class Index extends React.Component {
       this.setState({ currentpage });
     });
   }
+  componentWillUnmount() {
+    PubSub.unsubscribe("resourcetotal", "currentpage");
+  }
   render() {
     const { resourcetotal, currentpage } = this.state;
     return (

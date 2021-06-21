@@ -1,3 +1,42 @@
 .pagelist {
-  color: red;
+  width: calc(100% - 256px);
+}
+
+.pagelist .ct {
+  margin: 30px 100px;
+  padding: 5% 5%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+}
+.pagelist h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1240px) {
+  .pagelist .ct {
+    margin: 25px 50px;
+  }
+  .pagelist {
+    width: calc(100% - 190px);
+  }
+}
+@media (max-width: 991px) {
+  .pagelist {
+    width: calc(100% - 60px);
+  }
+  .pagelist .ct {
+    margin: 15px;
+  }
+
+  .pagelist h1 {
+    padding-top: 0;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+}
+
+.pagelist .pagelistedit {
+  margin-right: 5px;
 }

@@ -1,0 +1,117 @@
+.neworeditpage {
+  width: calc(100% - 256px);
+}
+
+.neworeditpage .ct {
+  margin: 30px 100px;
+  padding: 0 2% 2%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+}
+.neworeditpage h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.neworeditpage .pagelistedit {
+  margin-right: 5px;
+}
+
+.neworeditpage .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #67c23a;
+}
+.neworeditpage .ant-tabs-tab-btn:hover {
+  color: #8eda69;
+}
+.neworeditpage .ant-tabs-tab {
+  margin: 8px;
+  padding: 0;
+}
+.neworeditpage .ant-tabs-ink-bar {
+  background: #67c23a;
+}
+.neworeditpage .ant-tabs-nav {
+  margin-bottom: 5px;
+}
+
+.neworeditpage .texttab > h3 {
+  display: inline-block;
+  margin: 10px 0 5px;
+}
+.neworeditpage .texttab > .titleinput {
+}
+.neworeditpage .texttab > .buttoneara {
+  margin: 10px 0;
+  width: 100%;
+}
+.neworeditpage .texttab > .buttoneara > .submitbutton {
+  margin: 10px 0;
+  float: right;
+}
+.neworeditpage .imgtab {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.neworeditpage .imgtab > .buttoneara {
+  margin: 10px 0;
+  width: 100%;
+}
+.neworeditpage .imgtab > .buttoneara > .submitbutton {
+  margin: 10px 0;
+  float: right;
+}
+.neworeditpage .imgtab .ant-upload-list-picture-card-container,
+.neworeditpage .imgtab .ant-upload.ant-upload-select-picture-card {
+  width: 230px;
+  height: 230px;
+}
+
+.neworeditpage .resourcetab {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+.neworeditpage .resourcetab > .buttoneara {
+  margin: 10px 0;
+  width: 100%;
+}
+.neworeditpage .resourcetab > .buttoneara > .submitbutton {
+  margin: 10px 0;
+  float: right;
+}
+
+@media (max-width: 1240px) {
+  .neworeditpage .ct {
+    margin: 25px 50px;
+  }
+  .neworeditpage {
+    width: calc(100% - 190px);
+  }
+  .neworeditpage .imgtab .ant-upload-list-picture-card-container,
+  .neworeditpage .imgtab .ant-upload.ant-upload-select-picture-card {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 991px) {
+  .neworeditpage {
+    width: calc(100% - 60px);
+  }
+  .neworeditpage .ct {
+    margin: 15px;
+  }
+
+  .neworeditpage h1 {
+    padding-top: 0;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  .neworeditpage .imgtab > .buttoneara {
+    margin: 50px 0;
+  }
+  .neworeditpage .imgtab .ant-upload-list-picture-card-container,
+  .neworeditpage .imgtab .ant-upload.ant-upload-select-picture-card {
+    width: 120px;
+    height: 120px;
+  }
+}

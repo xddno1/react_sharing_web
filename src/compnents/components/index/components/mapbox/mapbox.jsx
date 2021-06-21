@@ -11,7 +11,7 @@ export default class Mapbox extends React.Component {
           <iframe
             src="https://www.lovestu.com/api/project/cnmapyinqing/obj.php"
             height="500"
-            frameborder="no"
+            frameBorder="no"
             border="0"
             width="300"
             title="j"

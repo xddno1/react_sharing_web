@@ -18,18 +18,18 @@ export default class Hallcommenttable extends React.Component {
         address: "西湖区湖底公园1号",
       },
       {
-        key: "1",
+        key: "4",
         name: "胡彦斌",
         age: 32,
       },
       {
-        key: "2",
+        key: "5",
         name: "胡彦祖",
         age: 42,
         address: "西湖区湖底公园1号",
       },
       {
-        key: "1",
+        key: "6",
         name: "胡彦斌",
         age: 32,
       },

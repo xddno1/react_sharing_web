@@ -1,31 +1,77 @@
 import React from "react";
-import { Menu } from "antd";
+import { Menu, Input, Checkbox, Button, message } from "antd";
+import { connect } from "react-redux";
 import {
   AppstoreOutlined,
   CommentOutlined,
   NotificationOutlined,
   UserOutlined,
+  LockOutlined,
 } from "@ant-design/icons";
 import { Switch, Route, Redirect } from "react-router-dom";
+import axios from "axios";
 
 import "./admin.css";
 import Adminindex from "./components/adminindex/adminindex";
 import Account from "./components/account/account";
 import Hallcommentcontral from "./components/hallcommentcontral/hallcommentcontral";
-import Newpage from "./components/newpage/newpage";
+import Neworeditpage from "./components/neworeditpage/neworeditpage";
 import Notice from "./components/notice/notice";
 import Pagelist from "./components/pagelist/pagelist";
+import { actionInsertAdminToken } from "../../../redux/actions/admintoken";
 
 const { SubMenu } = Menu;
-export default class Admin extends React.Component {
-  state = {
-    collapsed: false,
-  };
+class Admin extends React.Component {
+  constructor(props) {
+    super(props);
+    // console.log(props);
+    let defaultSelectedKeys = [];
+    let defaultOpenkeys = [];
+    const corepath = props.location.pathname.split("/")[2];
+    const additonpath = props.location.pathname.split("/")[3];
+    switch (corepath) {
+      case "pagelist":
+        defaultOpenkeys = ["sub1"];
+        defaultSelectedKeys = ["2"];
+        break;
+      case "hallcomment":
+        defaultSelectedKeys = ["3"];
+
+        break;
+      case "notice":
+        defaultSelectedKeys = ["4"];
+
+        break;
+      case "account":
+        defaultSelectedKeys = ["5"];
+
+        break;
+      case "page":
+        defaultOpenkeys = ["sub1"];
+        if (additonpath === "newpage") {
+          defaultSelectedKeys = ["1"];
+        } else {
+          defaultSelectedKeys = ["2"];
+        }
+
+        break;
+      default:
+        break;
+    }
+    this.state = {
+      collapsed: false,
+      defaultOpenkeys,
+      defaultSelectedKeys,
+      adminname: "",
+      adminpsw: "",
+    };
+  }
+
   handleClick = (e) => {
     const { key } = e;
     switch (key * 1) {
       case 1:
-        this.props.history.replace("/admin/newpage");
+        this.props.history.push("/admin/page/newpage");
         break;
       case 2:
         this.props.history.replace("/admin/pagelist");
@@ -43,6 +89,30 @@ export default class Admin extends React.Component {
         break;
     }
   };
+  adminnameChange = (e) => {
+    const adminname = e.target.value.replace(/\s*/g, "");
+    this.setState({ adminname });
+  };
+  adminpswChange = (e) => {
+    const adminpsw = e.target.value;
+    this.setState({ adminpsw });
+  };
+  handleLogin = () => {
+    const { adminname, adminpsw } = this.state;
+    axios
+      .post(
+        `http://121.4.187.232:8081/user/adminLogin?password=${adminpsw}&username=${adminname}`
+      )
+      .then((e) => {
+        const admintoken = e.data.token;
+        this.props.insertAdminToken(admintoken);
+        message.success("登录成功");
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+      })
+      .catch((e) => {
+        message.error("登录失败");
+      });
+  };
   // 左边窗口自适应
   handleResize = (e) => {
     if (e.target.innerWidth < 991 && this.state.collapsed === false) {
@@ -53,6 +123,9 @@ export default class Admin extends React.Component {
     }
   };
   componentDidMount() {
+    // 设置默认展开Menu
+
+    // 滑到顶部
     const e = {
       target: { innerWidth: document.body.clientWidth },
     };
@@ -64,16 +137,25 @@ export default class Admin extends React.Component {
   }
 
   render() {
-    return (
+    const {
+      defaultOpenkeys,
+      defaultSelectedKeys,
+      collapsed,
+      adminname,
+      adminpsw,
+    } = this.state;
+    const { admintoken } = this.props;
+    return admintoken ? (
       <div className="admin clearfix">
         <Menu
           onClick={this.handleClick}
-          defaultOpenKeys={["sub1"]}
+          defaultOpenKeys={defaultOpenkeys}
           mode="inline"
           className="menu"
-          inlineCollapsed={this.state.collapsed}
+          inlineCollapsed={collapsed}
+          defaultSelectedKeys={defaultSelectedKeys}
         >
-          <SubMenu key="sub2" icon={<AppstoreOutlined />} title="文章管理">
+          <SubMenu key="sub1" icon={<AppstoreOutlined />} title="文章管理">
             <Menu.Item key="1">新文章</Menu.Item>
             <Menu.Item key="2">所有文章</Menu.Item>
           </SubMenu>
@@ -90,7 +172,7 @@ export default class Admin extends React.Component {
         </Menu>
         <Switch>
           <Route path="/admin/index" component={Adminindex} />
-          <Route path="/admin/newpage" component={Newpage} />
+          <Route path="/admin/page/:pageid" component={Neworeditpage} />
           <Route path="/admin/pagelist" component={Pagelist} />
           <Route path="/admin/hallcomment" component={Hallcommentcontral} />
           <Route path="/admin/notice" component={Notice} />
@@ -98,6 +180,52 @@ export default class Admin extends React.Component {
           <Redirect to="/admin/index" component={Adminindex} />
         </Switch>
       </div>
+    ) : (
+      <div className="loginct">
+        <div className="adminlogin">
+          <div className="userlogintitle clearfix">
+            <span className="title">管理员登录</span>
+          </div>
+          <div className="userloginform">
+            <div className="user-ac">
+              <Input
+                className="myinput"
+                size="large"
+                placeholder="请输入用户名"
+                prefix={<UserOutlined className="myicon" />}
+                value={adminname}
+                onChange={this.adminnameChange}
+              ></Input>
+            </div>
+            <div className="user-password">
+              <Input.Password
+                className="myinput"
+                size="large"
+                placeholder="请输入登录密码"
+                prefix={<LockOutlined className="myicon" />}
+                value={adminpsw}
+                onChange={this.adminpswChange}
+              ></Input.Password>
+            </div>
+            <div className="user-remenber">
+              <Checkbox defaultChecked="true">记住我的登录状态</Checkbox>
+            </div>
+            <Button
+              className="userloginbtn"
+              size="large"
+              type="primary"
+              block
+              onClick={this.handleLogin}
+            >
+              登录
+            </Button>
+          </div>
+        </div>
+      </div>
     );
   }
 }
+
+export default connect((state) => ({ admintoken: state.admintoken }), {
+  insertAdminToken: actionInsertAdminToken,
+})(Admin);

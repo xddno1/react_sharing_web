@@ -56,3 +56,19 @@
     width: 60px;
   }
 }
+
+.loginct {
+  margin: 160px 0 200px;
+  text-align: center;
+}
+.loginct .adminlogin {
+  display: inline-block;
+  padding: 24px;
+  width: 472px;
+  height: 320.6px;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(116, 116, 116, 0.08);
+  border-radius: 6px;
+  background-color: #fff;
+}
