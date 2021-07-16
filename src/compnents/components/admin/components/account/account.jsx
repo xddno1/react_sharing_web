@@ -10,7 +10,7 @@ class Account extends React.Component {
   componentDidMount() {
     axios({
       method: "post",
-      url: `http://121.4.187.232:8081/admin/queryAllUser`,
+      url: `http://121.4.187.232:8081/admin/queryAllUser?pageNo=1&pageSize=1`,
       headers: {
         token: this.props.admintoken,
       },

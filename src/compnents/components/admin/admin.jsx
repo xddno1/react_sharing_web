@@ -71,7 +71,10 @@ class Admin extends React.Component {
     const { key } = e;
     switch (key * 1) {
       case 1:
-        this.props.history.push("/admin/page/newpage");
+        window.open("/admin/page/newpage");
+        window.location.reload();
+        // this.props.location.reload();
+        // this.props.history.replace("/admin/page/newpage");
         break;
       case 2:
         this.props.history.replace("/admin/pagelist");

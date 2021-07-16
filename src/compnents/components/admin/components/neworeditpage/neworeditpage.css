@@ -79,6 +79,11 @@
   margin: 10px 0;
   float: right;
 }
+.neworeditpage .pagecommenttab {
+  padding: 15px 0;
+}
+.neworeditpage .pagecommenttab h1 {
+}
 
 @media (max-width: 1240px) {
   .neworeditpage .ct {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button, Popconfirm } from "antd";
+import { Table, Button, Popconfirm, message } from "antd";
 import { connect } from "react-redux";
 import axios from "axios";
 
@@ -7,22 +7,17 @@ import "./pagelist.css";
 const { Column } = Table;
 
 class Pagelist extends React.Component {
-  state = {
-    pagination: {
-      current: 1,
-      pageSize: 6,
-    },
-
-    pagedata: [],
-    resourcetotal: -1,
-  };
-  handleedit = (id) => {
-    this.props.history.push(`/admin/page/${id}`);
-  };
-  handledelete = (id) => {
-    console.log(id);
-  };
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pagination: {
+        current: 1,
+        pageSize: 6,
+      },
+      pagedata: [],
+      resourcetotal: -1,
+      loading: true,
+    };
     const { current, pageSize } = this.state.pagination;
     axios
       .get(
@@ -31,11 +26,42 @@ class Pagelist extends React.Component {
       .then((e) => {
         const resourcetotal = e.data.passageItemCount;
         const pagedata = e.data.passageItem.map((e) => e[0]);
-        this.setState({ resourcetotal, pagedata });
+        this.setState({ resourcetotal, pagedata, loading: false });
       });
   }
+
+  handleedit = (id) => {
+    this.props.history.push(`/admin/page/${id}`);
+  };
+  handledelete = (id) => {
+    axios({
+      method: "post",
+      url: `http://121.4.187.232:8081/admin/deletePassage?passageID=${id}`,
+      headers: {
+        token: this.props.admintoken,
+      },
+    }).then((e) => {
+      message.success("删除成功！");
+    });
+  };
+  handleTableChange = (pagination, filters, sorter) => {
+    const { current, pageSize } = pagination;
+
+    this.setState({ pagination, loading: true }, () => {
+      axios
+        .get(
+          `http://121.4.187.232:8081/passage/queryAllPassage?pageNo=${current}&pageSize=${pageSize}`
+        )
+        .then((e) => {
+          const resourcetotal = e.data.passageItemCount;
+          const pagedata = e.data.passageItem.map((e) => e[0]);
+          this.setState({ resourcetotal, pagedata, loading: false });
+        });
+    });
+  };
+
   render() {
-    let { pagination, pagedata, resourcetotal } = this.state;
+    let { pagination, pagedata, resourcetotal, loading } = this.state;
     pagination = {
       ...pagination,
       total: resourcetotal,
@@ -49,6 +75,8 @@ class Pagelist extends React.Component {
             dataSource={pagedata}
             pagination={pagination}
             bordered
+            onChange={this.handleTableChange}
+            loading={loading}
           >
             <Column
               title="标题"

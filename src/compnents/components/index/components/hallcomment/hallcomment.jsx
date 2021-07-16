@@ -26,9 +26,11 @@ export default class Hallcomment extends React.Component {
   };
   gethallcomment = () => {
     axios
-      .get(`http://121.4.187.232:8081/hallComment/queryAllHallComment`)
+      .post(
+        `http://121.4.187.232:8081/hallComment/queryAllHallComment?pageNo=1&pageSize=100`
+      )
       .then((a) => {
-        const hallcommentdata = a.data;
+        const hallcommentdata = a.data[0];
         this.setState({ hallcommentdata });
       });
   };
